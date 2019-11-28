@@ -18,13 +18,12 @@ public class PROINIM {
         // TODO code application logic here
         
         String user = "postgres";
-        String password = "1234JMRM0307";
-        String driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
-        String host = "148.225.60.115";
-        String nameDB = "DVDRental";
-        String portDB = "1433";
-        String url = "jdbc:sqlserver://"+host+":"+portDB+";databaseName="+nameDB;
-        
+        String password = "postgres";
+        String driver = "org.postgresql.Driver";
+        String host = "localhost";
+        String nameDB = "PROINIM";
+        String portDB = "6789";
+        String url = "jdbc:postgresql://localhost:"+portDB+"/"+nameDB;
         Base0 enter = new Base0();
         Base0.create(url, user, password, driver);
         

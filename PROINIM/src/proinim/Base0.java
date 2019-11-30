@@ -137,7 +137,14 @@ public class Base0 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void ConsultActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ConsultActionPerformed
+        consult c = new consult();
+        c.setVisible(true);
+        c.setVisible(true);
+        c.setLocationRelativeTo(null);
         
+        c.create(urlDB, userDB, passwordDB, driverDB);
+        
+        dispose();
     }//GEN-LAST:event_ConsultActionPerformed
 
     private void EditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditActionPerformed

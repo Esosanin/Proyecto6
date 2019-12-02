@@ -57,12 +57,11 @@ public class Base0 extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(300, 400));
         setMinimumSize(new java.awt.Dimension(300, 400));
-        setPreferredSize(new java.awt.Dimension(300, 400));
         setResizable(false);
 
         Consult.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         Consult.setText("Consultar y validar pedidos");
-        Consult.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        Consult.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
         Consult.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ConsultActionPerformed(evt);
@@ -71,7 +70,7 @@ public class Base0 extends javax.swing.JFrame {
 
         Edit.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         Edit.setText("Modificar pedidos");
-        Edit.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        Edit.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
         Edit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 EditActionPerformed(evt);
@@ -80,7 +79,7 @@ public class Base0 extends javax.swing.JFrame {
 
         Exit.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         Exit.setText("salir");
-        Exit.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        Exit.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
         Exit.setMaximumSize(new java.awt.Dimension(40, 40));
         Exit.setMinimumSize(new java.awt.Dimension(40, 40));
         Exit.setPreferredSize(new java.awt.Dimension(40, 40));
@@ -90,7 +89,7 @@ public class Base0 extends javax.swing.JFrame {
 
         jLabel3.setBackground(new java.awt.Color(204, 204, 255));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("IMAGE");
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/proinim.png"))); // NOI18N
         jLabel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jLabel3.setMaximumSize(new java.awt.Dimension(200, 125));
         jLabel3.setMinimumSize(new java.awt.Dimension(200, 125));
@@ -101,21 +100,24 @@ public class Base0 extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(50, Short.MAX_VALUE)
+                .addContainerGap(48, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(Exit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(90, 90, 90))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(Consult, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(Consult)
                         .addGroup(layout.createSequentialGroup()
                             .addGap(30, 30, 30)
-                            .addComponent(Edit))
-                        .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(Edit)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addGap(38, 38, 38)))
                 .addGap(49, 49, 49))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 238, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -144,7 +146,7 @@ public class Base0 extends javax.swing.JFrame {
         
         c.create(urlDB, userDB, passwordDB, driverDB);
         
-        dispose();
+        this.dispose();
     }//GEN-LAST:event_ConsultActionPerformed
 
     private void EditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditActionPerformed
@@ -155,7 +157,7 @@ public class Base0 extends javax.swing.JFrame {
         
         o.create(urlDB, userDB, passwordDB, driverDB);
         
-        dispose();
+        this.dispose();
     }//GEN-LAST:event_EditActionPerformed
 
     /**

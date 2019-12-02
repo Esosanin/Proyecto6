@@ -92,8 +92,8 @@ public class orders extends javax.swing.JFrame {
         list = new javax.swing.JList<>();
         jScrollPane2 = new javax.swing.JScrollPane();
         table = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        B_return = new javax.swing.JButton();
+        B_save = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -105,6 +105,7 @@ public class orders extends javax.swing.JFrame {
         Label4 = new javax.swing.JLabel();
         Label5 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(700, 500));
@@ -144,11 +145,23 @@ public class orders extends javax.swing.JFrame {
         ));
         jScrollPane2.setViewportView(table);
 
-        jButton1.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jButton1.setText("Regresar a Menu Principal");
+        B_return.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        B_return.setText("Regresar a Menu Principal");
+        B_return.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        B_return.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                B_returnActionPerformed(evt);
+            }
+        });
 
-        jButton2.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jButton2.setText("Guardar cambios");
+        B_save.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        B_save.setText("Guardar cambios");
+        B_save.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        B_save.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                B_saveActionPerformed(evt);
+            }
+        });
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jLabel2.setText("Nombre del Cliente:");
@@ -183,6 +196,10 @@ public class orders extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jLabel5.setText("Codigo");
 
+        jLabel10.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        jLabel10.setText("Puedes: Cambiar Cantidad");
+        jLabel10.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
         javax.swing.GroupLayout PanelLayout = new javax.swing.GroupLayout(Panel);
         Panel.setLayout(PanelLayout);
         PanelLayout.setHorizontalGroup(
@@ -193,27 +210,30 @@ public class orders extends javax.swing.JFrame {
                     .addGroup(PanelLayout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Label1)
-                            .addComponent(Label2)
-                            .addComponent(Label3)
-                            .addComponent(Label4)
-                            .addComponent(Label5))
-                        .addGap(0, 423, Short.MAX_VALUE))
+                            .addGroup(PanelLayout.createSequentialGroup()
+                                .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(Label1)
+                                    .addComponent(Label2)
+                                    .addComponent(Label3)
+                                    .addComponent(Label4)
+                                    .addComponent(Label5))
+                                .addGap(0, 423, Short.MAX_VALUE))
+                            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addComponent(jScrollPane2))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jButton2)
+                .addComponent(B_save)
                 .addGap(18, 18, 18)
-                .addComponent(jButton1)
+                .addComponent(B_return)
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -232,8 +252,8 @@ public class orders extends javax.swing.JFrame {
                 .addGap(7, 7, 7)
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, PanelLayout.createSequentialGroup()
+                .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(PanelLayout.createSequentialGroup()
                         .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(PanelLayout.createSequentialGroup()
                                 .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -255,14 +275,16 @@ public class orders extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel9)
-                            .addComponent(Label5)))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(Label5))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel10))
+                    .addComponent(jScrollPane1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(PanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(B_return)
+                    .addComponent(B_save))
                 .addContainerGap())
         );
 
@@ -293,9 +315,6 @@ public class orders extends javax.swing.JFrame {
             DBConexion db = new DBConexion(urlDB, userDB, passwordDB);
             TableModel tm = (TableModel) db.ejecutaSelect("SELECT * FROM order_detail WHERE order_id = "+c+"");
             tm_cu = (TableModel) db.ejecutaSelect("SELECT * FROM customer c, order_sale o WHERE (c.customer_id = o.customer_id)AND(o.order_id = "+c+")");
-            for (int i = 0; i < tm_cu.getColumnCount(); i++) {
-                System.out.println(tm_cu.getValueAt(0, i));
-            }
             
             fill_customer();
             if (tm != null) {
@@ -308,6 +327,48 @@ public class orders extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_listMouseClicked
+
+    private void B_returnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_returnActionPerformed
+        Base0 main= new Base0();
+        
+        main.setLocationRelativeTo(null);
+        main.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_B_returnActionPerformed
+
+    private void B_saveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_saveActionPerformed
+        
+        String c = l.get(list.getSelectedIndex()).toString();
+        try{
+            String consulta = "";
+            Object[][] rows = new Object[table.getRowCount()][table.getColumnCount()];
+            DBConexion db = new DBConexion(urlDB, userDB, passwordDB);
+            
+            for (int i = 0; i < table.getRowCount(); i++) {
+                for (int j = 0; j < table.getColumnCount(); j++) {
+                    rows[i][j] = table.getValueAt(i, j);
+                }
+                Double Total = Double.parseDouble(rows[i][4].toString())*Double.parseDouble(rows[i][5].toString());
+                consulta = "UPDATE order_detail "
+                        + "SET cant_unit = '"+rows[i][5].toString()+"', "
+                        + "cost_total = '"+Total+"' "
+                        + "WHERE (order_id = "+c+")AND(customer_id="+tm_cu.getValueAt(0, 0).toString()+")AND(product_id = "+rows[i][1]+")";
+                db.ejecutaInsert(consulta);
+            }
+            
+            TableModel tm = (TableModel) db.ejecutaSelect("SELECT * FROM order_detail WHERE (order_id = "+c+")AND(customer_id="+tm_cu.getValueAt(0, 0).toString()+")");
+            
+            fill_customer();
+            if (tm != null) {
+                    table.setModel(tm);
+            }else {
+                JOptionPane.showMessageDialog(this, "No se encontraron registros en la tabla.");
+            }
+        }catch(SQLException e){
+            System.out.println(e.getMessage());
+        }
+        
+    }//GEN-LAST:event_B_saveActionPerformed
 
     /**
      * @param args the command line arguments
@@ -346,15 +407,16 @@ public class orders extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton B_return;
+    private javax.swing.JButton B_save;
     private javax.swing.JLabel Label1;
     private javax.swing.JLabel Label2;
     private javax.swing.JLabel Label3;
     private javax.swing.JLabel Label4;
     private javax.swing.JLabel Label5;
     private javax.swing.JPanel Panel;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

@@ -8,6 +8,8 @@ package proinim;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.TableModel;
 
@@ -80,9 +82,9 @@ public class consult extends javax.swing.JFrame {
         Label2.setText(tm_c.getValueAt(0, 13).toString());
         Label3.setText(tm_c.getValueAt(0, 5).toString());
         if (tm_c.getValueAt(0, 11).toString().equals("false"))
-            Label4.setText("No valido");
+            Label4.setText("NO VALIDO");
         else
-            Label4.setText("Valido");
+            Label4.setText("VALIDO");
         Label5.setText(cuco[list_cu.getSelectedIndex()][list_co.getSelectedIndex()].toString());
 //        System.out.println(tm_cu.getColumnCount());
     }
@@ -100,7 +102,7 @@ public class consult extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         table_cu = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
+        B_return = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -138,10 +140,17 @@ public class consult extends javax.swing.JFrame {
 
             }
         ));
+        table_cu.setEnabled(false);
         jScrollPane2.setViewportView(table_cu);
 
-        jButton1.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jButton1.setText("Regresar a Menu Principal");
+        B_return.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        B_return.setText("Regresar a Menu Principal");
+        B_return.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        B_return.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                B_returnActionPerformed(evt);
+            }
+        });
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jLabel2.setText("Nombre del Cliente:");
@@ -201,6 +210,12 @@ public class consult extends javax.swing.JFrame {
 
         valid.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         valid.setText("Validar");
+        valid.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
+        valid.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                validActionPerformed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jLabel1.setText("Codigo");
@@ -218,7 +233,7 @@ public class consult extends javax.swing.JFrame {
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 654, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButton1))
+                        .addComponent(B_return))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -297,7 +312,7 @@ public class consult extends javax.swing.JFrame {
                 .addGap(9, 9, 9)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton1)
+                .addComponent(B_return)
                 .addContainerGap())
         );
 
@@ -331,7 +346,6 @@ public class consult extends javax.swing.JFrame {
                 else if (!o[i-1].equals(String.valueOf(cuco[list_cu.getSelectedIndex()][i])))
                     o[i]=(String.valueOf(cuco[list_cu.getSelectedIndex()][i]));
                 
-                    
             }
         }
         list_co.setListData(o);
@@ -345,9 +359,6 @@ public class consult extends javax.swing.JFrame {
             DBConexion db = new DBConexion(urlDB, userDB, passwordDB);
             TableModel tm = (TableModel) db.ejecutaSelect("SELECT * FROM order_detail WHERE order_id = "+c+"");
             tm_c = (TableModel) db.ejecutaSelect("SELECT * FROM customer c, order_sale o WHERE (c.customer_id = o.customer_id)AND(o.order_id = "+c+")");
-            for (int i = 0; i < tm_c.getColumnCount(); i++) {
-                System.out.println(tm_c.getValueAt(0, i));
-            }
             
             fill_customer();
             if (tm != null) {
@@ -359,6 +370,47 @@ public class consult extends javax.swing.JFrame {
             System.out.println(e.getMessage());
         }
     }//GEN-LAST:event_list_coMouseClicked
+
+    private void B_returnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_returnActionPerformed
+        Base0 prin = new Base0();
+      
+        prin.setLocationRelativeTo(null);
+        prin.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_B_returnActionPerformed
+
+    private void validActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_validActionPerformed
+        
+        String c = table_cu.getValueAt(0, 0).toString();
+        String consulta = "";
+        try{
+            DBConexion db = new DBConexion(urlDB, userDB, passwordDB);
+            TableModel tm;
+            boolean p = false;
+            if (tm_c.getValueAt(0, 11).toString().equals("false")){
+                consulta = "UPDATE order_sale "
+                        + "SET status = 'true' "
+                        + "WHERE order_id = "+c+"";
+                p = db.ejecutaInsert(consulta);
+            }
+            fill_customer();
+            if (!p) {
+                JOptionPane.showMessageDialog(this, "No se encontraron registros en la tabla.");
+            }else{
+                tm = (TableModel) db.ejecutaSelect("SELECT * FROM order_detail WHERE order_id = "+c+"");
+                tm_c = (TableModel) db.ejecutaSelect("SELECT * FROM customer c, order_sale o WHERE (c.customer_id = o.customer_id)AND(o.order_id = "+c+")");
+
+                fill_customer();
+                if (tm != null) {
+                        table_cu.setModel(tm);
+                }else {
+                    JOptionPane.showMessageDialog(this, "No se encontraron registros en la tabla.");
+                }
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(consult.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_validActionPerformed
 
     /**
      * @param args the command line arguments
@@ -396,12 +448,12 @@ public class consult extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton B_return;
     private javax.swing.JLabel Label1;
     private javax.swing.JLabel Label2;
     private javax.swing.JLabel Label3;
     private javax.swing.JLabel Label4;
     private javax.swing.JLabel Label5;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -414,7 +466,7 @@ public class consult extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JList<String> list_co;
+    private static javax.swing.JList<String> list_co;
     private static javax.swing.JList<String> list_cu;
     private javax.swing.JTable table_cu;
     private javax.swing.JButton valid;

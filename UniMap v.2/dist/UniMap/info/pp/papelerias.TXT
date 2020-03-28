@@ -1,0 +1,6 @@
+Papeleria de Psicologia, Edificio 9F, PP_Psico.jpg, coord_psico.jpg
+Papeleria de ECA, Edificio 10H, PP_Eca.jpg, serv_papeca.jpg
+Centro de copiado en Derecho, Edificio 10I, PP_Derecho.jpg, serv_copiader.jpg
+Centro de copiado Central, Biblioteca Central, PP_Central.jpg, serv_copiac.jpg
+Papeleria, Laboratorio de informatica Edificio 12F, PP_Papeleria.jpg, serv_labc.jpg
+Centro de copiado, Laboratorio de informatica Edificio 12F, PP_CentroCopi.jpg, serv_copiac.jpg

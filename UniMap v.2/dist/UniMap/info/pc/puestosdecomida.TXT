@@ -1,0 +1,12 @@
+Tiendita de letras, Entre Av Universidad y calle de la Cultura, Tortas. molletes. onigiris. quesadilla. sodas y más, T_Letras.jpg, tienda_letras.jpg
+Tiendita de matemáticas, Detras del edificio 3K, Tortas. chimichangas. burritos. ensaladas. etc, T_Mate.jpg, tienda_mate.jpg
+Tiendita de industrial, Detrás del edificio 5L, Comidas. desayunos y antojitos, T_indus.jpg, tienda_industrial.jpg
+Tiendita de comunicación, En la Calle del Conocimiento enseguida del edificio 9G, Desayunos. burros. tortas. paninis y más, T_comunicacion.jpg, tienda_comunicacion.jpg
+Tiendita de derecho, Entre el estacinamiento del edificio 10I (Lic. de Derecho) y la Calle de la Sabiduria,Desayunos. burros. molletes. gelatina. etc, T_Dere.jpg, tienda_derecho.jpg
+TIendita del Trabajo social, En el costado derecho del edificio 10I entre los edificios 10C y 10D, Desayunos. hamburguesas. Paninis. Enchiladas. Boneless. entre otras cosas, T_trabajosocial.jpg, tienda_Tsocial.jpg
+Tiendita de psicología 1, En la Calle del Conocimiento enseguida del edificio 9K, Tortas. hamburguesas. pizzapan. ensaladas y más, T_comunicacion.jpg, tienda_psicologia.jpg
+Tiendita de psicología 2, En el estacionamiento 09-EM101 entre los edificios 9H y 9I, Tortas. hamburguesas. pizzapan. ensaladas. hamburguesas. entre otras cosas, T_psicologia2.jpg, tienda_psicologia2.jpg
+Tiendita de bellas artes, Edificio 3J, Desayunos. molletes. anotojos. onigiris y más,T_BA.jpg, tienda_artes.jpg
+Tiendita de metalurgia, Edificio G enfrente del estadio Miguel Castro Servín, Tortas. quesadillas. burros. trenzas. etc, T_Metal.jpg, tienda_metalurgia.jpg
+Caffenio ECA,Calle del Conocimiento y Av Sonora, T_ECA.jpg, pint_cafenioeca.jpg
+Caffenio Las moritas,Calle de la Sabiduría y Avenida Universidad, T_Moritas.jpg, pint_cafeniof.jpg 

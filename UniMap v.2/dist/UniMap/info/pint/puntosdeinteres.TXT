@@ -1,13 +1,13 @@
-Plaza estudiante, Calle de la Sabiduría, P_PlazaEstudiante.jpg, pint_pest.jpg
-Tesoreria General, Calle de la Sabiduría, P_Tesoreria.jpg, pint_teso.jpg
+Plaza estudiante, Calle de la Sabiduria, P_PlazaEstudiante.jpg, pint_pest.jpg
+Tesoreria General, Calle de la Sabiduria, P_Tesoreria.jpg, pint_teso.jpg
 Tesoreria, Atras de servicios escolares edificio 8A, P_Tesoreria2.jpg, pint_teso2.jpg
-Comedor Universitario, Calle de la Sabiduría edificio 12D, P_Comedor.jpg, pint_comedor.jpg
+Comedor Universitario, Calle de la Sabiduria edificio 12D, P_Comedor.jpg, pint_comedor.jpg
 Cancha Mate, Atras del edificio 3K, P_CanchaMate.jpg, pint_cmate.jpg
 Cancha de Sociales, Estacionamiento 09-EM101 atras del edificio 9E, P_CanchaSociales.jpg, pint_ccsociales.jpg
-Cancha de enfermería, Entre los edificios 10A y 10C, P_CanchaEnfer.jpg, pint_cenf.jpg
+Cancha de enfermeria, Entre los edificios 10A y 10C, P_CanchaEnfer.jpg, pint_cenf.jpg
 Estadio Miguel Castro Cervin, Calle Conocimiento, P_Estadio.jpg, pint_estadio.jpg
 Multinivel, Entre Av Sonora y Av Universidad, P_Multinivel.jpg, pint_mnivl.jpg
 Servicios escolares, Edificio 8A, P_ServEsc.jpg, pint_sesc.jpg
 Informatica, Edificio 8C, P_Informatica.jpg, pint_info.jpg
 Contraloria General, Edificio 2A ala norte,P_ControlGene.jpg, pint_contral.jpg
-Caja de Ahorro y Préstamos, Edificio 2A planta baja, P_CajaAhorro.jpg, pint_cajaahorro.jpg
+Caja de Ahorro y Prestamos, Edificio 2A planta baja, P_CajaAhorro.jpg, pint_cajaahorro.jpg
